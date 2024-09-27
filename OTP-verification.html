@@ -55,12 +55,10 @@
 
         otpInputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
-                // Move to the next input when one is filled
                 if (e.target.value.length > 0 && index < otpInputs.length - 1) {
                     otpInputs[index + 1].focus();
                 }
 
-                // Automatically move to previous input if current input is empty
                 if (e.target.value.length === 0 && index > 0) {
                     otpInputs[index - 1].focus();
                 }

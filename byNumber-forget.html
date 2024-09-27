@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone -Forget-Password</title>
+    <title>Phone-Forget-Password</title>
     <!-- Bootstrap 5 CSS Link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font-awesome CSS -->
@@ -53,7 +53,7 @@
         </form>
         <div id="message" class="message"></div>
         <p style="font-size: 0.875rem; color: #000000; text-align: center; margin-top: 10px;">Forgot your Phone number? <a
-                href="forget-password.html" class="forgot-email text-danger">Try using email</a></p>
+                href="byEmail-forget.html" class="forgot-email text-danger text-decoration-none">Try using email</a></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -69,11 +69,8 @@
                 return;
             }
 
-            // Logic to send OTP goes here
-            // For demonstration purposes, we'll just display a success message
-            document.getElementById('message').innerText = "OTP has been sent to " + phoneNumber + ".";
-            document.getElementById('message').classList.remove('text-danger');
-            document.getElementById('message').classList.add('text-success');
+            // Redirect to the OTP verification page
+            window.location.href = "OTP-verification.html";
         });
     </script>
 </body>

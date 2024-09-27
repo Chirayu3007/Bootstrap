@@ -55,18 +55,19 @@
 
         otpInputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
+                // Move to the next input when one is filled
                 if (e.target.value.length > 0 && index < otpInputs.length - 1) {
                     otpInputs[index + 1].focus();
                 }
-            });
 
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && index > 0 && e.target.value.length === 0) {
+                // Automatically move to previous input if current input is empty
+                if (e.target.value.length === 0 && index > 0) {
                     otpInputs[index - 1].focus();
                 }
             });
         });
 
+        // Verify OTP button click
         document.getElementById('verify-btn').addEventListener('click', () => {
             const otpValue = Array.from(otpInputs).map(input => input.value).join('');
             alert(`Entered OTP: ${otpValue}`);
